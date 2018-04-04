@@ -24,3 +24,7 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+src/main/resources/static
+
+yarn-error.log
+yarn.lock
