@@ -1,14 +1,10 @@
 export const actionNames = {
-    APPLY_SERVER_SIDE_TIME: 'APPLY_SERVER_SIDE_TIME',
-    FETCH_SERVER_SIDE_TIME: 'FETCH_SERVER_SIDE_TIME',
+    MAKE_LOGIN: 'MAKE_LOGIN'
 }
 
 export const actions = {
-    applyServerSideTime: time => ({
-        type: actionNames.APPLY_SERVER_SIDE_TIME,
-        payload: time
-    }),
-    fetchServerSideTime: () => ({
-        type: actionNames.FETCH_SERVER_SIDE_TIME
+    makeLogin: loginData => ({
+        type: actionNames.MAKE_LOGIN,
+        payload: loginData
     })
 }

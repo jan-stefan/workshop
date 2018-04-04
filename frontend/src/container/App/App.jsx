@@ -1,20 +1,34 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Login from '../Login/Login.jsx';
+import Registry from '../../components/Registry/Registry.jsx';
+import { Navbar } from 'react-bootstrap';
 
-import WelcomeToReact from '../../components/welcometoreact/WelcomeToReact.jsx';
 
-import {actions} from '../../actions';
+import { actions } from '../../actions';
 
 class App extends Component {
-  render() {
-    return (
-        <WelcomeToReact 
-            message={this.props.ui.message}
-            fetchServerSideTime={this.props.fetchServerSideTime}
-            serverSideTime={this.props.data.serverSideTime}
-        />
-    );
-  }
+    render() {
+        return (
+            <div>
+                <Navbar inverse collapseOnSelect>
+                    <Navbar.Header>
+                        <Navbar.Brand>
+                            <a href="#">Workshop</a>
+                        </Navbar.Brand>
+                        <Navbar.Toggle />
+                    </Navbar.Header>
+                </Navbar>
+                <Router>
+                    <div>
+                        <Route path="/login" component={Login} />
+                        <Route path="/registry" component={Registry} />
+                    </div>
+                </Router>
+            </div>
+        );
+    }
 }
 
 function mapStateToProps(state) {
@@ -23,7 +37,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        fetchServerSideTime: () => {dispatch(actions.fetchServerSideTime())}
+        fetchServerSideTime: () => { dispatch(actions.fetchServerSideTime()) }
     }
 }
 
