@@ -22,4 +22,7 @@ public class RecipeService {
         return Lists.newArrayList(recipeRepository.findAll());
     }
 
+    public void deleteRecipe(Long id){
+        recipeRepository.deleteById(id);
+    }
 }

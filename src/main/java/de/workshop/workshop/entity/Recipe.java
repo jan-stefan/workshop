@@ -19,6 +19,6 @@ public class Recipe {
     private String description;
     private String instruction;
 
-//    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
-//    private List<Ingredient> ingredients = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+    private List<Ingredient> ingredients = new ArrayList<>();
 }
