@@ -6,25 +6,24 @@ import {actions, actionNames} from './actions';
 const apiBasePath = '/api';
 
 const apiPaths = {
-    time: apiBasePath + '/time'
+    register: apiBasePath + '/register'
 }
 
 const api = {
-    getServerTime: () => axios.get(apiPaths.time)
+    register: registerData => axios.post(apiPaths.register, registerData)
 }
 
-function* fetchUser(action) {
+function* register(action) {
+    console.log(action)
    try {
-      const response = yield call(api.getServerTime);
-      const time = response.data;
-      yield put(actions.applyServerSideTime(time));
+      const response = yield call(() => {api.register(action.payload)});
+      console.log(response.data)
    } catch (e) {
-      yield put(actions.applyServerSideTime('error'));
    }
 }
 
 function* mySaga() {
-  yield takeLatest(actionNames.FETCH_SERVER_SIDE_TIME, fetchUser);
+  yield takeLatest(actionNames.START_SEND_REGISTRAION, register);
 }
 
 export default mySaga;

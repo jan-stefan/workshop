@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Login from '../../components/Login/Login.jsx';
+import LoginDump from '../../components/Login/Login.jsx';
 
 import { actions } from '../../actions';
 
 const proxyToValue = proxy => proxy.target.value;
 
-class App extends Component {
+class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -28,7 +28,7 @@ class App extends Component {
     }
     render() {
         return (
-            <Login
+            <LoginDump
                 usernameHandler={this.usernameHandler}
                 passwordHandler={this.passwordHandler}
                 username={this.state.username}
@@ -49,4 +49,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

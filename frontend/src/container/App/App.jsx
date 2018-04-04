@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from '../Login/Login.jsx';
-import Registry from '../../components/Registry/Registry.jsx';
+import Registry from '../Registry/Registry.jsx';
 import { Navbar } from 'react-bootstrap';
 
 
