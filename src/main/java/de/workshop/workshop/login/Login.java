@@ -9,6 +9,6 @@ import javax.persistence.Id;
 @Setter
 public class Login {
     @Id
-    public String name;
+    public String username;
     public String password;
 }
