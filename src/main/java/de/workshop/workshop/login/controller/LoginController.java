@@ -14,7 +14,7 @@ public class LoginController {
     @RequestMapping(value = "/api/login", method = RequestMethod.POST)
     public ResponseEntity<?> getJson(@RequestBody Login data){
         CheckData cd = new CheckData();
-        if(!cd.passwordEquils(data.name,data.password))new ResponseEntity(null, HttpStatus.FORBIDDEN);
+        if(!cd.passwordEquils(data.username,data.password))new ResponseEntity(null, HttpStatus.FORBIDDEN);
         return new ResponseEntity(null, HttpStatus.OK);
     }
 }
