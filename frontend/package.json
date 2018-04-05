@@ -37,6 +37,7 @@
     "react-bootstrap": "^0.32.1",
     "react-dev-utils": "^5.0.0",
     "react-dom": "^16.2.0",
+    "react-quill": "^1.2.7",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-spinners": "^0.3.1",
@@ -97,5 +98,5 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "http://10.15.7.88:8080"
+  "proxy": "http://localhost:8080"
 }
