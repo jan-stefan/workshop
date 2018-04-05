@@ -1,7 +1,6 @@
 package de.workshop.workshop.service;
 
 import com.google.common.collect.Lists;
-import de.workshop.workshop.Register.Session.UserData;
 import de.workshop.workshop.posts.Post;
 import de.workshop.workshop.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +23,7 @@ public class PostService {
     }
 
     public List <Post> getAllPostsByUsername(String username) {
-        return repository.getAllByCreatorName(username);
+        return repository.getAllByCreator(username);
     }
 
     public void deletePost(Long id) {

@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface PostRepository
         extends CrudRepository <Post, Long> {
-    List <Post> getAllByCreatorName(String creatorName);
+    List <Post> getAllByCreator(String creatorName);
 
     Post getById(Long id);
 }
