@@ -1,4 +1,4 @@
-package de.workshop.workshop.posts;
+package de.workshop.workshop.post;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,7 +1,7 @@
-package de.workshop.workshop.controller;
+package de.workshop.workshop.post.controller;
 
-import de.workshop.workshop.posts.Post;
-import de.workshop.workshop.service.PostService;
+import de.workshop.workshop.post.Post;
+import de.workshop.workshop.post.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
