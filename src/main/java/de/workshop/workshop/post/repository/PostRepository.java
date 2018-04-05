@@ -1,6 +1,6 @@
-package de.workshop.workshop.repository;
+package de.workshop.workshop.post.repository;
 
-import de.workshop.workshop.posts.Post;
+import de.workshop.workshop.post.Post;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

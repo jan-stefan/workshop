@@ -1,8 +1,8 @@
-package de.workshop.workshop.service;
+package de.workshop.workshop.post.service;
 
 import com.google.common.collect.Lists;
-import de.workshop.workshop.posts.Post;
-import de.workshop.workshop.repository.PostRepository;
+import de.workshop.workshop.post.Post;
+import de.workshop.workshop.post.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
