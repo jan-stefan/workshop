@@ -1,7 +1,7 @@
 package de.workshop.workshop.Register.Services;
 
 import de.workshop.workshop.Register.Session.UserData;
-import de.workshop.workshop.Register.Sessions;
+import de.workshop.workshop.Sessions;
 
 public class CheckData {
     Sessions sess = new Sessions();
