@@ -3,6 +3,7 @@ import {
 } from 'redux';
 import app from './container/App/reducer';
 import registry from './container/Registry/reducer';
+import login from './container/Login/reducer';
 import {actionNames} from './actions';
 
 
@@ -21,7 +22,8 @@ const data = (state = {
 
 const ui = combineReducers({
     app,
-    registry
+    registry,
+    login
 })
 
 export default combineReducers({
