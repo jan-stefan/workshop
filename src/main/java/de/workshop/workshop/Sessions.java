@@ -1,4 +1,4 @@
-package de.workshop.workshop.Register;
+package de.workshop.workshop;
 
 import java.util.HashMap;
 
