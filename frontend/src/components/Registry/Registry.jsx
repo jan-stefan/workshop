@@ -1,9 +1,8 @@
 import React from 'react';
-import style from './style.css';
-import {FormGroup, FormControl, Button} from 'react-bootstrap';
+import { FormGroup, FormControl, Button } from 'react-bootstrap';
 
 const Registry = props => (
-    <div className={style.App}>
+    <div>
         <FormGroup>
             <FormControl
                 type="text"
@@ -19,7 +18,7 @@ const Registry = props => (
                 placeholder="Lastname"
                 onChange={props.lastnameHandler}
             />
-        </FormGroup> 
+        </FormGroup>
         <FormGroup>
             <FormControl
                 type="text"
@@ -48,10 +47,10 @@ const Registry = props => (
         </FormGroup>
         <FormGroup>
             <Button
-             bsStyle="primary" 
-             onClick={props.submitHandler}
-             disabled={props.disableSubmit}
-             >
+                bsStyle="primary"
+                onClick={props.submitHandler}
+                disabled={props.disableSubmit}
+            >
                 Register
             </Button>
         </FormGroup>

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import RegistryDump from '../../components/Registry/Registry.jsx';
-
 import { actions } from '../../actions';
+import Centering from '../../components/Centering/Centering';
+import { Collapse, Alert } from 'react-bootstrap';
+import { ScaleLoader } from 'react-spinners';
 
 const proxyToValue = proxy => proxy.target.value;
 
@@ -45,7 +47,6 @@ class Registry extends Component {
         this.setState({ lastname: proxyToValue(proxy) })
     }
     repeatPasswordHandler(proxy) {
-        console.log("here")
         this.setState({ repeatPassword: proxyToValue(proxy) })
     }
 
@@ -59,31 +60,51 @@ class Registry extends Component {
 
     render() {
         return (
-            <RegistryDump
-                usernameHandler={this.usernameHandler}
-                passwordHandler={this.passwordHandler}
-                firstnameHandler={this.firstnameHandler}
-                lastnameHandler={this.lastnameHandler}
-                repeatPasswordHandler={this.repeatPasswordHandler}
-                submitHandler={this.submitHandler}
+            <Centering>
+                {
+                    this.props.loading ?
+                        <ScaleLoader/>
+                        :
+                        <RegistryDump
+                            usernameHandler={this.usernameHandler}
+                            passwordHandler={this.passwordHandler}
+                            firstnameHandler={this.firstnameHandler}
+                            lastnameHandler={this.lastnameHandler}
+                            repeatPasswordHandler={this.repeatPasswordHandler}
+                            submitHandler={this.submitHandler}
 
 
-                username={this.state.username}
-                password={this.state.password}
-                repeatPassword={this.state.repeatPassword}
-                firstname={this.state.firstname}
-                lastname={this.state.lastname}
+                            username={this.state.username}
+                            password={this.state.password}
+                            repeatPassword={this.state.repeatPassword}
+                            firstname={this.state.firstname}
+                            lastname={this.state.lastname}
 
 
-                disableSubmit={this.shouldDisableSubmit()}
-            />
-
+                            disableSubmit={this.shouldDisableSubmit()}
+                        />
+                }
+                <Collapse in={this.props.error}>
+                    <Alert
+                        bsStyle="danger"
+                    >
+                        <strong>Oh snap! There went something wrong!</strong>
+                    </Alert>
+                </Collapse>
+                <Collapse in={this.props.success}>
+                    <Alert
+                        bsStyle="success"
+                    >
+                        <strong>Registration successful</strong>
+                    </Alert>
+                </Collapse>
+            </Centering>
         );
     }
 }
 
 function mapStateToProps(state) {
-    return state;
+    return state.ui.registry;
 }
 
 function mapDispatchToProps(dispatch) {
