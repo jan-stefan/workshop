@@ -12,43 +12,68 @@ export const actionNames = {
 }
 
 export const actions = {
-    //Login
-    startSendlogin: loginData => ({
+        //Login
+        startSendlogin: loginData = > ({
         type: actionNames.START_SEND_LOGIN,
         payload: loginData
     }),
-    setloginLoadingStatus: status => ({
-        type: actionNames.SET_LOGIN_LOADING_STATUS,
-        payload: status
-    }),
-    setloginErrorStatus: status => ({
-        type: actionNames.SET_LOGIN_ERROR_STATUS,
-        payload: status
-    }),
-    setloginSuccessStatus: status => ({
-        type: actionNames.SET_LOGIN_SUCCESS_STATUS,
-        payload: status
-    }),
-
-
-
+    setloginLoadingStatus
+:
+status =
+>
+({
+    type: actionNames.SET_LOGIN_LOADING_STATUS,
+    payload: status
+}),
+    setloginErrorStatus
+:
+status =
+>
+({
+    type: actionNames.SET_LOGIN_ERROR_STATUS,
+    payload: status
+}),
+    setloginSuccessStatus
+:
+status =
+>
+({
+    type: actionNames.SET_LOGIN_SUCCESS_STATUS,
+    payload: status
+}),
 
 
     //Registry
-    startSendRegistration: registrationData => ({
-        type: actionNames.START_SEND_REGISTRAION,
-        payload: registrationData
-    }),
-    setRegistryLoadingStatus: status => ({
-        type: actionNames.SET_REGISTRY_LOADING_STATUS,
-        payload: status
-    }),
-    setRegistryErrorStatus: status => ({
-        type: actionNames.SET_REGISTRY_ERROR_STATUS,
-        payload: status
-    }),
-    setRegistrySuccessStatus: status => ({
-        type: actionNames.SET_REGISTRY_SUCCESS_STATUS,
-        payload: status
-    })
+    startSendRegistration
+:
+registrationData =
+>
+({
+    type: actionNames.START_SEND_REGISTRAION,
+    payload: registrationData
+}),
+    setRegistryLoadingStatus
+:
+status =
+>
+({
+    type: actionNames.SET_REGISTRY_LOADING_STATUS,
+    payload: status
+}),
+    setRegistryErrorStatus
+:
+status =
+>
+({
+    type: actionNames.SET_REGISTRY_ERROR_STATUS,
+    payload: status
+}),
+    setRegistrySuccessStatus
+:
+status =
+>
+({
+    type: actionNames.SET_REGISTRY_SUCCESS_STATUS,
+    payload: status
+})
 }

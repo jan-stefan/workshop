@@ -14,4 +14,5 @@ let store = createStore(mainReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && wind
 
 sagaMiddleware.run(middleware)
 
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render( < Provider
+store = {store} > < App / > < /Provider>, document.getElementById('root'));

@@ -4,7 +4,13 @@ import de.workshop.workshop.posts.Post;
 import de.workshop.workshop.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -29,16 +35,16 @@ public class PostController {
         postService.deletePost(id);
     }
 
-    @RequestMapping(path = "post/{id}",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-    public Post getPostById(@PathVariable("id") Long id){
-       return postService.getPostById(id);
+    @RequestMapping(path = "post/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Post getPostById(@PathVariable("id") Long id) {
+        return postService.getPostById(id);
     }
 
-    @RequestMapping(path = "posts",method = RequestMethod.GET)
-    public List<Post> getAllPosts(@RequestParam(value = "username",defaultValue = "") String userName) {
-        if (!userName.equals("")){
+    @RequestMapping(path = "posts", method = RequestMethod.GET)
+    public List <Post> getAllPosts(@RequestParam(value = "username", defaultValue = "") String userName) {
+        if (!userName.equals("")) {
             return postService.getAllPostsByUsername(userName);
-        }else {
+        } else {
             return postService.getAllPosts();
         }
     }

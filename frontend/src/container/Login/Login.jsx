@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import LoginDump from '../../components/Login/Login.jsx';
-import { ScaleLoader } from 'react-spinners';
-import { actions } from '../../actions';
+import {ScaleLoader} from 'react-spinners';
+import {actions} from '../../actions';
 import Centering from '../../components/Centering/Centering';
-import { Alert, Collapse } from 'react-bootstrap';
+import {Alert, Collapse} from 'react-bootstrap';
 
 
 const proxyToValue = proxy => proxy.target.value;
@@ -20,21 +20,25 @@ class Login extends Component {
         this.passwordHandler = this.passwordHandler.bind(this);
         this.submitHandler = this.submitHandler.bind(this);
     }
+
     usernameHandler(proxy) {
-        this.setState({ username: proxyToValue(proxy) })
+        this.setState({username: proxyToValue(proxy)})
     }
+
     passwordHandler(proxy) {
-        this.setState({ password: proxyToValue(proxy) })
+        this.setState({password: proxyToValue(proxy)})
     }
+
     submitHandler() {
         this.props.startSendlogin(this.state);
     }
+
     render() {
         return (
             <Centering>
                 {
                     this.props.loading ?
-                        <ScaleLoader />
+                        <ScaleLoader/>
                         :
                         this.props.success ?
                             <Alert
@@ -71,7 +75,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        startSendlogin: loginData => { dispatch(actions.startSendlogin(loginData)) }
+        startSendlogin: loginData => {
+            dispatch(actions.startSendlogin(loginData))
+        }
     }
 }
 

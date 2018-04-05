@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import RegistryDump from '../../components/Registry/Registry.jsx';
-import { actions } from '../../actions';
+import {actions} from '../../actions';
 import Centering from '../../components/Centering/Centering';
-import { Collapse, Alert } from 'react-bootstrap';
-import { ScaleLoader } from 'react-spinners';
+import {Alert, Collapse} from 'react-bootstrap';
+import {ScaleLoader} from 'react-spinners';
 
 const proxyToValue = proxy => proxy.target.value;
 
@@ -30,24 +30,29 @@ class Registry extends Component {
     }
 
     usernameHandler(proxy) {
-        this.setState({ username: proxyToValue(proxy) })
+        this.setState({username: proxyToValue(proxy)})
     }
+
     passwordHandler(proxy) {
-        this.setState({ password: proxyToValue(proxy) })
+        this.setState({password: proxyToValue(proxy)})
     }
+
     submitHandler() {
         let state = this.state;
         delete state['repeatPassword'];
         this.props.startSendRegistration(state);
     }
+
     firstnameHandler(proxy) {
-        this.setState({ firstname: proxyToValue(proxy) })
+        this.setState({firstname: proxyToValue(proxy)})
     }
+
     lastnameHandler(proxy) {
-        this.setState({ lastname: proxyToValue(proxy) })
+        this.setState({lastname: proxyToValue(proxy)})
     }
+
     repeatPasswordHandler(proxy) {
-        this.setState({ repeatPassword: proxyToValue(proxy) })
+        this.setState({repeatPassword: proxyToValue(proxy)})
     }
 
     shouldDisableSubmit() {
@@ -109,7 +114,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        startSendRegistration: registrationData => { dispatch(actions.startSendRegistration(registrationData)) }
+        startSendRegistration: registrationData => {
+            dispatch(actions.startSendRegistration(registrationData))
+        }
     }
 }
 

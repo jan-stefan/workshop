@@ -1,6 +1,10 @@
 package de.workshop.workshop.Register.Session;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Id;
 
@@ -10,8 +14,13 @@ import javax.persistence.Id;
 @NoArgsConstructor
 public class UserData {
     @Id
-    @NonNull public String username;
-    @NonNull public String password;
-    @NonNull public String firstname;
-    @NonNull public String lastname;
+    public long id;
+    @NonNull
+    public String username;
+    @NonNull
+    public String password;
+    @NonNull
+    public String firstname;
+    @NonNull
+    public String lastname;
 }

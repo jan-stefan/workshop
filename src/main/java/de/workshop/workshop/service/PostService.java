@@ -18,23 +18,25 @@ public class PostService {
         this.repository = repository;
     }
 
-    public List<Post> getAllPosts() {
+    public List <Post> getAllPosts() {
         return Lists.newArrayList(repository.findAll());
     }
 
-    public List<Post> getAllPostsByUsername(String username) {
+    public List <Post> getAllPostsByUsername(String username) {
         return repository.getAllByCreatorName(username);
     }
 
-    public void deletePost(Long id){
+    public void deletePost(Long id) {
         repository.deleteById(id);
     }
 
-    public Post createPost(Post post){
+    public Post createPost(Post post) {
         return repository.save(post);
     }
 
-    public Post getPostById(Long id){
+    public Post getPostById(Long id) {
         return repository.getById(id);
     }
+
+
 }

@@ -9,15 +9,20 @@ import {actionNames} from './actions';
 
 const data = (state = {
     serverSideTime: null
-}, action) => {
+}, action) =
+>
+{
     switch (action.type) {
         case actionNames.APPLY_SERVER_SIDE_TIME:
-        return {
-            ...state,
-            serverSideTime: action.payload
-        }
-        default: return state;
+            return {
+                ...state,
+                serverSideTime
+        :
+            action.payload
     }
+default:
+    return state;
+}
 }
 
 const ui = combineReducers({

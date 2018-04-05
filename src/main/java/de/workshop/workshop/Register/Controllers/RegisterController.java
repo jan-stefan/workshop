@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RegisterController {
     @RequestMapping(method = RequestMethod.POST, value = "/api/register")
-    public ResponseEntity<?> getJson(@RequestBody UserData test){
-        CheckData cd = new CheckData();
-        Session sess = new Session();
-        if(cd.usernameForgiven(test.username))return new ResponseEntity(null, HttpStatus.FORBIDDEN);
-        sess.allUsers.put(sess.allUsers.size()+1,test);
+    public ResponseEntity <?> getJson(@RequestBody UserData test) {
+        CheckData cd   = new CheckData();
+        Session   sess = new Session();
+        if (cd.usernameForgiven(test.username)) {
+            return new ResponseEntity(null, HttpStatus.FORBIDDEN);
+        }
+        sess.allUsers.put(sess.allUsers.size() + 1, test);
         return new ResponseEntity(null, HttpStatus.OK);
     }
 }
