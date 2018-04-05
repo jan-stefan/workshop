@@ -1,7 +1,7 @@
-package de.workshop.workshop.Register.Session;
+package de.workshop.workshop.Register;
 
 import java.util.HashMap;
 
-public class Session {
+public class Sessions {
     public static HashMap allUsers = new HashMap();
 }
