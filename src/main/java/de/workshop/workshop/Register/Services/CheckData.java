@@ -1,10 +1,10 @@
 package de.workshop.workshop.Register.Services;
 
-import de.workshop.workshop.Register.Session.Session;
 import de.workshop.workshop.Register.Session.UserData;
+import de.workshop.workshop.Register.Sessions;
 
 public class CheckData {
-    Session sess = new Session();
+    Sessions sess = new Sessions();
     public boolean usernameForgiven(String username){
         UserData ud;
         for(int i=1; i<=sess.allUsers.size(); i++){
