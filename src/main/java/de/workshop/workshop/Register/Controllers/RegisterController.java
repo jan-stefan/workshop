@@ -15,9 +15,9 @@ public class RegisterController {
     @RequestMapping(method = RequestMethod.POST, value = "/api/register")
     public ResponseEntity<?> getJson(@RequestBody UserData incomingUserData){
         CheckData cd = new CheckData();
-        Session sess = new Session();
+        Session session = new Session();
         if(cd.usernameForgiven(incomingUserData.username))return new ResponseEntity(null, HttpStatus.FORBIDDEN);
-        sess.allUsers.put(sess.allUsers.size()+1,incomingUserData);
+        session.allUsers.put(session.allUsers.size()+1,incomingUserData);
         return new ResponseEntity(null, HttpStatus.OK);
     }
 }
