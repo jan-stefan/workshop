@@ -7,7 +7,7 @@ public class CheckData {
     Session sess = new Session();
     public boolean usernameForgiven(String username){
         UserData ud;
-        for(int i=1; i<sess.allUsers.size(); i++){
+        for(int i=1; i<=sess.allUsers.size(); i++){
             ud = (UserData) sess.allUsers.get(i);
             if(ud.username.equals(username))return true;
         }
