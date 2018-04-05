@@ -1,9 +1,9 @@
 import React from 'react';
 import { FormGroup, FormControl, Button } from 'react-bootstrap';
-import Centering from '../Centering/Centering';
+
 
 const Login = props => (
-    <Centering>
+    <div>
         <FormGroup>
             <FormControl
                 type="text"
@@ -26,7 +26,7 @@ const Login = props => (
                 Login
             </Button>
         </FormGroup>
-    </Centering>
+    </div>
 )
 
 export default Login;

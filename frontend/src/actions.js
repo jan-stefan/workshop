@@ -1,7 +1,8 @@
 export const actionNames = {
-    MAKE_LOGIN: 'MAKE_LOGIN',
-
-
+    START_SEND_LOGIN: 'START_SEND_LOGIN',
+    SET_LOGIN_LOADING_STATUS: 'SET_LOGIN_LOADING_STATUS',
+    SET_LOGIN_ERROR_STATUS: 'SET_LOGIN_ERROR_STATUS',
+    SET_LOGIN_SUCCESS_STATUS: 'SET_LOGIN_SUCCESS_STATUS',
 
     //Registry
     START_SEND_REGISTRAION: 'START_SEND_REGISTRAION',
@@ -11,11 +12,23 @@ export const actionNames = {
 }
 
 export const actions = {
-    makeLogin: loginData => ({
-        type: actionNames.MAKE_LOGIN,
+    //Login
+    startSendlogin: loginData => ({
+        type: actionNames.START_SEND_LOGIN,
         payload: loginData
     }),
-
+    setloginLoadingStatus: status => ({
+        type: actionNames.SET_LOGIN_LOADING_STATUS,
+        payload: status
+    }),
+    setloginErrorStatus: status => ({
+        type: actionNames.SET_LOGIN_ERROR_STATUS,
+        payload: status
+    }),
+    setloginSuccessStatus: status => ({
+        type: actionNames.SET_LOGIN_SUCCESS_STATUS,
+        payload: status
+    }),
 
 
 
