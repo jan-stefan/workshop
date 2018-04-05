@@ -18,6 +18,11 @@ export default (state = {
                 ...state,
                 error: action.payload
             }
+            case actionNames.SET_REGISTRY_SUCCESS_STATUS:
+            return {
+                ...state,
+                success: action.payload
+            }
         default:
             return state;
     }
